@@ -1,0 +1,29 @@
+$stickHeight: 30px
+$stickFinalHeight: 40px
+.loadingIcon
+  margin: 20px auto
+  width: 70px
+  display: flex
+  justify-content: space-between
+.stick
+  width: 10px
+  height: $stickHeight
+  background-color: #267fca
+  animation-name: stickGrowth
+  animation-duration: .4s
+  animation-iteration-count: infinite
+
+.stick:nth-child(2)
+  animation-delay: .1s
+
+.stick:nth-child(3)
+  animation-delay: .2s
+
+.stick:nth-child(4)
+  animation-delay: .3s
+
+@keyframes stickGrowth
+  0%
+    height: $stickFinalHeight
+  100%
+    height: $stickHeight

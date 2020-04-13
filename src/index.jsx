@@ -1,18 +1,20 @@
-import React, {Component} from "react";
-import ReactDOM from "react-dom";
-import { createStore } from "redux";
-import {HashRouter} from "react-router-dom";
+import React from 'react';
+import { render } from "react-dom";
+import { HashRouter, Route } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import configureStore from './configureStore.jsx';
+import App from './components/App.jsx';
 import "./sass/index.sass";
 
-class A extends Component{
-  render(){
-    return (
-      <h1>Hello world</h1>
-    );
-  };
-};
 
-ReactDOM.render(
-  <A />,
-  root
+const store = configureStore();
+
+render(
+  <Provider store={store}>
+    <HashRouter>
+      <Route exact path="/" component={App} />
+      <Route path="/:lat/:lon" component={App} />
+    </HashRouter>
+  </Provider>,
+  document.getElementById('root')
 );

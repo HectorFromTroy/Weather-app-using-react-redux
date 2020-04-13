@@ -1,2 +1,31 @@
+$images-folder: "../../public/images/"
+
+@font-face
+  font-family: "Roboto-Light"
+  src: url(../fonts/Roboto-Light.ttf)
+
+body
+  margin: 0
+  box-sizing: border-box
+  font-size: 10px
+  font-family: "Roboto-Light"
+
 h1
-  color: red
+  margin: 0
+
+.header
+  height: 240px
+  animation: headerImg 4s infinite alternate
+  display: flex
+  flex-flow: column
+  justify-content: center
+  align-items: center
+  font-size: 4rem
+  color: #f0eaf9
+
+@keyframes headerImg
+  0%, 40%
+    background: url($images-folder + "clear.jpg") no-repeat center
+    
+  60%, 100%
+    background: url($images-folder + "thunder.jpg") no-repeat center -400px

@@ -1,0 +1,47 @@
+ import { Map, Marker, Popup, TileLayer } from 'react-leaflet';
+ const mapStyle = {
+   width calc(100vw - 5px),
+   height calc(100vh - 5px),
+   border 2px solid black
+ };
+ class Mapp extends Component{
+
+   constructor(props){
+     super(props);
+     this.state = {
+       markerPosition {
+         lat null,
+         lng null
+       }
+     };
+     this.onClick = this.onClick.bind(this);
+   };
+
+   onClick(e){
+     this.setState({
+       markerPosition e.latlng
+     });
+   };
+
+   render() {
+     const position = [51, 0.1];
+     return (
+       Map 
+         center={position} 
+         zoom={10} 
+         style={mapStyle}
+         onClick={this.onClick}
+         ref={(map) = this.mapRef = map}
+       
+         TileLayer
+           url=https{s}.tile.openstreetmap.org{z}{x}{y}.png
+         
+         Marker position={this.state.markerPosition}
+           Popup
+             A pretty CSS3 popup. br  Easily customizable.
+           Popup
+         Marker
+       Map
+     )
+   }
+ };

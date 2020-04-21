@@ -9,7 +9,7 @@ module.exports = {
   entry: ['babel-polyfill', "./src/index.jsx"],   
 
   output: {//bundles will be emmited here
-    path: __dirname,//path.resolve(__dirname, "dist"),//resolve method returns absolute path
+    path: __dirname + "/public/",//path.resolve(__dirname, "dist"),//resolve method returns absolute path
     filename: "main.js"//main.js is default name
   },
 
@@ -34,8 +34,10 @@ module.exports = {
         ]
       },
       {
-        test: /\.(png|svg|jpg|gif|ttf)$/,
-        use: ["file-loader"]
+        test: /\.(jpg|ttf)$/,
+        use: [
+          "file-loader"
+        ]
       }
     ]
   },

@@ -21,14 +21,17 @@ const receivedData = (state={
 }, action) => {
   if(action.type === RECEIVE_WEATHER){
     const weatherData = action.payload;
+    console.log(weatherData);
     const { name, country, coord } = weatherData.city;
-    const date = weatherData.list[0].dt_txt;
-    const temp = weatherData.list[0].main.temp;
-    const description = weatherData.list[0].weather[0].description;
+    const list = weatherData.list;
+    const date = list[0].dt_txt;
+    const temp = list[0].main.temp;
+    const description = list[0].weather[0].description;
     return {
       name,
       country,
       date,
+      list,
       temp,
       description,
       coord,

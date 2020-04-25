@@ -58,7 +58,7 @@ module.exports = {
     //here should be plugins
   ],
 
-  mode: "production", //development, production or none for webpack's built-in optimizations
+  mode: "development", //development, production or none for webpack's built-in optimizations
 
   target: "web"//to compile for web-like environment, it is default value
 

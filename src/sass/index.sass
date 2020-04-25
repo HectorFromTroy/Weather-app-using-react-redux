@@ -4,17 +4,19 @@ $images-folder: "../../public/images/"
   font-family: "Roboto-Light"
   src: url(../fonts/Roboto-Light.ttf)
 
+html
+  font-size: 10px
+
 body
   margin: 0
   box-sizing: border-box
-  font-size: 10px
   font-family: "Roboto-Light"
 
 h1
   margin: 0
 
 .header
-  height: 240px
+  height: 24rem
   animation: headerImg 4s infinite alternate
   display: flex
   flex-flow: column
@@ -29,3 +31,12 @@ h1
     
   60%, 100%
     background: url($images-folder + "thunder.jpg") no-repeat center -400px
+
+@media (max-width: 800px)
+  .header
+    font-size: 3rem
+
+@media (max-width: 400px)
+  .header
+    height: 10rem
+    font-size: 2rem

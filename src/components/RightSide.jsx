@@ -21,8 +21,12 @@ const RightSide = props => {
       <div className="tabSelectors" onClick={event => {
         changeTab(event.target.dataset.tabindex);
       }}>
-        <button data-tabindex={"1"}>Map</button>
-        <button data-tabindex={"2"}>Graphic</button>
+        <button className={`tabButton tabButton_first ${tabId === "1" && "tabButton_selected"}`} 
+          data-tabindex={"1"}
+        >Map</button>
+        <button className={`tabButton tabButton_last ${tabId === "2" && "tabButton_selected"}`} 
+          data-tabindex={"2"}
+        >Graphic</button>
       </div>
       {chooseOne()}
     </div>

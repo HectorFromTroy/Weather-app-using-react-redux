@@ -10,3 +10,22 @@
 
 .tabSelectors
   display: flex
+  margin-bottom: 1rem
+
+.tabButton
+  border: 1px solid black
+  padding: .5rem
+  outline: none
+  cursor: pointer
+
+.tabButton_selected
+  border: 1px solid blue
+
+.tabButton:not(:first-child)
+  margin-left: -1px
+
+.tabButton_first
+  border-radius: $borderRadius 0 0 $borderRadius
+
+.tabButton_last
+  border-radius: 0 $borderRadius $borderRadius 0

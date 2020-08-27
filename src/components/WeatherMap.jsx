@@ -9,11 +9,11 @@ const mapStyle = {
   height: "100%"
 };
 const WeatherMap = props => {
-  const position = props.isPositionChosen ? [props.lat, props.lon] : [50, 50];
+  const position = props.isPositionChosen ? [props.lat, props.lon] : undefined;
   return (
     <div className="weatherMap">
       <Map
-        center={position} 
+        center={position || [50, 50]} 
         zoom={7}
         style={mapStyle}
         onClick={
@@ -26,11 +26,12 @@ const WeatherMap = props => {
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
+        {position && 
         <Marker position={position}>
           <Popup>
             A pretty CSS3 popup. br  Easily customizable.
           </Popup>
-        </Marker>
+        </Marker>}
       </Map> 
     </div>
     

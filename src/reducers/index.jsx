@@ -16,8 +16,7 @@ const receivedData = (state={
   coord: {
     lat: "",
     lon: ""
-  },
-  isPositionChosen: false
+  }
 }, action) => {
   if(action.type === RECEIVE_WEATHER){
     const weatherData = action.payload;
@@ -34,8 +33,7 @@ const receivedData = (state={
       list,
       temp,
       description,
-      coord,
-      isPositionChosen: true
+      coord
     };
   }
   else{

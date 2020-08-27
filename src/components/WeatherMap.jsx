@@ -9,7 +9,7 @@ const mapStyle = {
   height: "100%"
 };
 const WeatherMap = props => {
-  const position = props.isPositionChosen ? [props.lat, props.lon] : undefined;
+  const position = props.lat ? [props.lat, props.lon] : undefined;
   return (
     <div className="weatherMap">
       <Map
@@ -53,8 +53,7 @@ const mapStateToProps = state => {
   const { lat, lon } = state.weatherData.coord;
   return {
     lat,
-    lon,
-    isPositionChosen: state.weatherData.isPositionChosen
+    lon
   };
 };
 

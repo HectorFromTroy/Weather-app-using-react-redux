@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
+import LoadingIcon from "./LoadingIcon";
 import "../sass/weatherMainInfo.sass";
 import "../sass/loadingIcon.sass";
 
@@ -9,12 +10,7 @@ const WeatherMainInfo = props => {
     <div className="weatherMainInfo">
       {
         props.isFetching ?
-        <div className="loadingIcon">
-          <div className="stick"></div>
-          <div className="stick"></div>
-          <div className="stick"></div>
-          <div className="stick"></div>
-        </div>
+        <LoadingIcon />
         :
         <h2>{props.name} {props.temp}</h2>
       }

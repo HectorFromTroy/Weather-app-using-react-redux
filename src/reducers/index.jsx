@@ -20,7 +20,6 @@ const receivedData = (state={
 }, action) => {
   if(action.type === RECEIVE_WEATHER){
     const weatherData = action.payload;
-    console.log(weatherData);
     const { name, country, coord } = weatherData.city;
     const list = weatherData.list;
     const date = list[0].dt_txt;
